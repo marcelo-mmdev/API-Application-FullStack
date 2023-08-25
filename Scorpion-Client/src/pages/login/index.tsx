@@ -30,7 +30,7 @@ export default function Login() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            Login do Shopping
+            Login do Sistema
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
             Vamos nós organizar ✌️

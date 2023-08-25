@@ -2,7 +2,7 @@
 
 import { Grid, GridItem } from "@chakra-ui/react";
 import HeaderHome from "@/components/layouts/headerHome";
-import NavbarHome from "@/components/layouts/navbarHome";
+import MenuHome from "@/components/layouts/menuHome";
 import MainHome from "@/components/layouts/mainHome";
 import FooterHome from "@/components/layouts/footerHome";
 
@@ -22,7 +22,8 @@ export default function Produtos() {
           <HeaderHome />
         </GridItem>
         <GridItem area={"nav"}>
-          <NavbarHome />
+          {/* Menu */}
+          <MenuHome />
         </GridItem>
         <GridItem area={"main"}>
           {/* Main */}

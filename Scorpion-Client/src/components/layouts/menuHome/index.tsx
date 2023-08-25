@@ -1,16 +1,4 @@
 "use client";
-// import { Box } from "@chakra-ui/react";
-// import React from "react";
-
-// const NavbarHome = () => {
-//   return (
-//     <>
-//       <Box>NavbarHome</Box>
-//     </>
-//   );
-// };
-
-// export default NavbarHome;
 
 import React from "react";
 import {
@@ -27,15 +15,15 @@ import {
   BoxProps,
   FlexProps,
 } from "@chakra-ui/react";
+import { FiHome, FiTrendingUp, FiMenu } from "react-icons/fi";
+import { GiMeditation } from "react-icons/gi";
 import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-} from "react-icons/fi";
-import { MdRestaurantMenu, MdOutlineAddShoppingCart } from "react-icons/md";
+  MdRestaurantMenu,
+  MdOutlineAddShoppingCart,
+  MdSailing,
+  MdFitnessCenter,
+  MdOutlineSignpost,
+} from "react-icons/md";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
 
@@ -47,11 +35,11 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Home", icon: FiHome },
   { name: "Cardápio", icon: MdRestaurantMenu },
   { name: "Finaceiro", icon: FiTrendingUp },
-  { name: "Meditação", icon: MdOutlineAddShoppingCart },
+  { name: "Fitness", icon: MdFitnessCenter },
+  { name: "Meditação", icon: GiMeditation },
   { name: "Mercado", icon: MdOutlineAddShoppingCart },
-  { name: "Objetivos", icon: MdOutlineAddShoppingCart },
-  { name: "Planos", icon: MdOutlineAddShoppingCart },
-  { name: "Settings", icon: FiSettings },
+  { name: "Objetivos", icon: MdOutlineSignpost },
+  { name: "Planos", icon: MdSailing },
 ];
 
 export default function SimpleSidebar() {
@@ -91,8 +79,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     <Box
       bg={useColorModeValue("CINZ.60", "CINZ.60")}
-      // borderRight="1px"
-      // borderRightColor={useColorModeValue("gray.200", "gray.700")}
       w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
@@ -141,7 +127,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         {icon && (
           <Icon
             mr="4"
-            fontSize="16"
+            fontSize="22"
             _groupHover={{
               color: "white",
             }}

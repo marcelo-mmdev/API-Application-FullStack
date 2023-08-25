@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { MdDelete, MdEdit, MdAddShoppingCart } from "react-icons/md";
+import { MdDelete, MdEdit, MdOutlineAdd } from "react-icons/md";
 import ModuleAddProducts from "@/components/templates/modules/moduleAddProducts";
 import {
   IProducts,
@@ -62,66 +62,50 @@ const MainHome = () => {
   return (
     <>
       <Box m="5px">
-        <TableContainer>
-          <Table>
-            <Thead>
-              <Tr bg="CINZ.60">
-                <Th
-                  onClick={() => {}}
-                  borderTopRadius={"8px"}
-                  w="100%"
-                  h="60px"
-                  color="#ffffff"
-                >
-                  <Box
-                    display={"flex"}
-                    alignItems={"center"}
-                    justifyContent={"space-between"}
-                  >
-                    <Box>
-                      <Text as={"p"} color={"BRPR.20"} fontSize={"20px"}>
-                        Produtos
-                      </Text>
-                    </Box>
-                    <Box>
-                      <Button
-                        w="100%"
-                        h="25px"
-                        bg={"none"}
-                        color={"VERD.30"}
-                        borderRadius="10px"
-                        onClick={() => {
-                          onOpenAddProducts();
-                        }}
-                        _hover={{
-                          bg: "Vnone",
-                        }}
-                      >
-                        <Icon
-                          as={MdAddShoppingCart}
-                          w="25px"
-                          h="25px"
-                          color={"VERD.30"}
-                          display="center"
-                          alignItems="center"
-                          justifyContent="center"
-                        />
-                        Adicionar
-                      </Button>
-                    </Box>
-                  </Box>
-                </Th>
-              </Tr>
-            </Thead>
-          </Table>
-        </TableContainer>
-        <TableContainer
-          h="100%"
-          // borderRadius={"8px"}
-          mt="5px"
-          overflowY="auto"
-          color="#000"
+        <Box
+          borderTopRadius={"8px"}
+          w="100%"
+          h="60px"
+          p="5px"
+          bg="CINZ.60"
+          color="#ffffff"
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
         >
+          <Box>
+            <Text as={"p"} color={"BRPR.20"} fontSize={"20px"}>
+              Produtos
+            </Text>
+          </Box>
+          <Box>
+            <Button
+              w="100%"
+              h="25px"
+              bg={"none"}
+              color={"VERD.30"}
+              borderRadius="10px"
+              onClick={() => {
+                onOpenAddProducts();
+              }}
+              _hover={{
+                bg: "Vnone",
+              }}
+            >
+              <Icon
+                as={MdOutlineAdd}
+                w="25px"
+                h="25px"
+                color={"VERD.30"}
+                display="center"
+                alignItems="center"
+                justifyContent="center"
+              />
+              Adicionar
+            </Button>
+          </Box>
+        </Box>
+        <TableContainer h="100%" mt="5px" overflowY="auto" color="#000">
           <Table>
             <Tbody>
               {products.map((data: any) => {
@@ -147,18 +131,8 @@ const MainHome = () => {
                         alignItems={"center"}
                         justifyContent={"space-between"}
                       >
-                        <Box
-                          w="90%"
-                          display={"flex"}
-                          alignItems={"center"}
-                          // justifyContent={"space-between"}
-                        >
-                          <Box
-                            w="60%"
-                            display={"flex"}
-                            alignItems={"center"}
-                            // justifyContent={"space-between"}
-                          >
+                        <Box w="90%" display={"flex"} alignItems={"center"}>
+                          <Box w="60%" display={"flex"} alignItems={"center"}>
                             <Text color={"BRPR.20"} fontSize={"18px"}>
                               {data.name}
                             </Text>
@@ -171,11 +145,7 @@ const MainHome = () => {
                               {data.amount}
                             </Text>
                           </Box>
-                          <Box
-                            w="20%"
-                            display={"flex"}
-                            // justifyContent={"space-between"}
-                          >
+                          <Box w="20%" display={"flex"}>
                             <Box w="100%" gap="3" display={"flex"}>
                               <Text color={"CINZ.60"} fontSize={"12px"}>
                                 Preço:
@@ -184,14 +154,6 @@ const MainHome = () => {
                                 {data.price}
                               </Text>
                             </Box>
-                            {/* <Box w="50%" gap="3" display={"flex"}>
-                              <Text color={"CINZ.60"} fontSize={"12px"}>
-                                Ultimo Preço:
-                              </Text>
-                              <Text color={"BRPR.20"} fontSize={"16px"}>
-                                {data.current}
-                              </Text>
-                            </Box> */}
                           </Box>
                         </Box>
                         <Box
@@ -209,10 +171,6 @@ const MainHome = () => {
                                 borderRadius="10px"
                                 onClick={() => {
                                   onOpenEditProducts();
-                                }}
-                                _hover={{
-                                  // bg: "AMAR.40",
-                                  color: "VERD.10",
                                 }}
                               >
                                 <Icon
@@ -236,11 +194,6 @@ const MainHome = () => {
                                 onClick={() => {
                                   onOpenDeleteProducts();
                                 }}
-                                _hover={
-                                  {
-                                    // bg: "VERM.10",
-                                  }
-                                }
                               >
                                 <Icon
                                   as={MdDelete}
